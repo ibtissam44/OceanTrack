@@ -20,22 +20,7 @@ This template is designed to be **responsive**, **customizable**, and **easy to 
  ![image](https://github.com/user-attachments/assets/ab8dbfc8-19b7-4b83-8f6f-47180933855e)
 
 
-## Prerequisites
 
-- **Node.js** and **npm** should be installed on your system
-- **Laravel Backend** with routes for:
-  - User authentication (signup, signin)
-  - CRUD operations for managing data
-  - API routes for statistical data (for charts)
-
-## Installation
-
-```bash
-git clone https://github.com/aminagr/react-tailwind-dashboard-template.git 
-cd react-tailwind-dashboard-template
-npm install
-npm run dev
-``` 
 ## Contributing
 
 Feel free to fork this repository, open issues, or submit pull requests. Contributions are always welcome!
