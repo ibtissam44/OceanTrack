@@ -14,8 +14,11 @@ This template is designed to be **responsive**, **customizable**, and **easy to 
 ## Screenshots
  ![image](https://github.com/user-attachments/assets/f41f2f60-8957-45b1-b29e-95f528ef9099)
  ![image](https://github.com/user-attachments/assets/481f175a-cd1e-4d72-b9ab-8b1b26a66df4)
- ![image](https://github.com/user-attachments/assets/152d44db-fff2-4549-9244-8c1e5ffac876)
- ![image](https://github.com/user-attachments/assets/ab8dbfc8-19b7-4b83-8f6f-47180933855e)
+ ![Image0](https://github.com/user-attachments/assets/cfc74563-22cc-415f-b684-c0d5e9bc7ec1)
+ ![Image3](https://github.com/user-attachments/assets/3c964f23-f3f3-4a69-9c15-d3bcb9899ea2)
+ ![Image1](https://github.com/user-attachments/assets/b2b83aff-f3ad-40b2-9fff-3701459ce839)
+ ![Image2](https://github.com/user-attachments/assets/faa40401-73fe-40af-9980-e4e848ec9db7)
+
 
 
 ## Installation
