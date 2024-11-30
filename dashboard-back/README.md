@@ -2,7 +2,7 @@
 
 ## Description
 
-This project is a **REST API** built with **Laravel** for a modern **dashboard** application. This API is designed to handle authentication, data management, and serve the necessary endpoints for interacting with the [**React and Tailwind CSS** front-end dashboard.](https://github.com/aminagr/react-tailwind-dashboard-template)
+This project is a **REST API** built with **Laravel** for a modern **dashboard** application. This API is designed to handle authentication, data management, and serve the necessary endpoints for interacting with the [**React and Tailwind CSS** front-end dashboard.](https://github.com/aminagr/react-laravel-dashboard-template/dashboard-front)
 
 Key features include:
 
