@@ -1,6 +1,6 @@
-# React & Laravel FullStack Dashboard Template 
+# React & Laravel Full-Stack Dashboard Template 
 
-A modern, full-stack dashboard template built with **React** for the frontend,  **Vite** for fast development, **Laravel** for the API backend, and styled using **Tailwind CSS**. 
+This full-stack dashboard template is built with **React** for the frontend,  **Vite** for fast development, **Laravel** for the API backend, and styled using **Tailwind CSS**. 
 This template is designed to be **responsive**, **customizable**, and **easy to extend**. It provides a simple layout structure for quickly building a dashboard application with all the necessary features.
 
 ## Features
