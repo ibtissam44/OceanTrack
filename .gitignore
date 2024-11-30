@@ -1,0 +1,32 @@
+
+
+
+# Fichiers de logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Node modules (React)
+dashboard-frontend/node_modules/
+dashboard-frontend/.env
+
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Laravel (backend)
+dashboard-backend/vendor/
+dashboard-backend/node_modules/
+dashboard-backend/.env
+dashboard-backend/storage/
+dashboard-backend/bootstrap/cache/
+
+# IDE/OS
+.DS_Store
+.idea/
+.vscode/
