@@ -1,17 +1,15 @@
 # React Dashboard Template with Vite, Tailwind CSS & Laravel API
 
-A **React.js** dashboard template built with **Vite** for fast development, **Tailwind CSS** for styling, and integrated with a [**Laravel** backend API](https://github.com/aminagr/laravel-dashboard-api) for user authentication (signup and signin), statistical charts, and CRUD operations.
-
+A modern, full-stack dashboard template built with **React** for the frontend,  **Vite** for fast development, **Laravel** for the API backend, and styled using **Tailwind CSS**. 
 This template is designed to be **responsive**, **customizable**, and **easy to extend**. It provides a simple layout structure for quickly building a dashboard application with all the necessary features.
 
 ## Features
 
-- **Fast development** with **Vite** as the bundler
-- Fully **responsive design** using **Tailwind CSS**
-- **Authentication system** (signup, signin) integrated with the Laravel API
-- **Charts** for displaying statistical data and analytics.
-- **Tables** for managing data with **CRUD functionality**
-- Easy to extend and customize based on your requirements
+- 🖥️ **Frontend**: Built with React and Tailwind CSS for a modern and responsive UI.
+- 🌐 **Backend**: Powered by Laravel API for robust and scalable server-side functionality.
+- 🎨 **Styling**: Customizable design using Tailwind CSS.
+- 🔗 **API Integration**: Smooth interaction between frontend and backend.
+- 📦 Ready to extend for production-grade projects.
 
 ## Screenshots
  ![image](https://github.com/user-attachments/assets/f41f2f60-8957-45b1-b29e-95f528ef9099)
@@ -20,21 +18,17 @@ This template is designed to be **responsive**, **customizable**, and **easy to 
  ![image](https://github.com/user-attachments/assets/ab8dbfc8-19b7-4b83-8f6f-47180933855e)
 
 
-## Prerequisites
-
-- **Node.js** and **npm** should be installed on your system
-- **Laravel Backend** with routes for:
-  - User authentication (signup, signin)
-  - CRUD operations for managing data
-  - API routes for statistical data (for charts)
-
 ## Installation
 
 ```bash
-git clone https://github.com/aminagr/react-tailwind-dashboard-template.git 
-cd react-tailwind-dashboard-template
+git clone https://github.com/aminagr/react-laravel-dashboard-template.git 
+cd react-laravel-dashboard-template
+cd dashboard-frontend
 npm install
 npm run dev
+cd dashboard-backend
+composer install
+php artisan serve
 ``` 
 ## Contributing
 
