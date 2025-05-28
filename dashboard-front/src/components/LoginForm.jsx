@@ -122,7 +122,7 @@ const LoginForm = () => {
         className="block text-center text-sm text-white mt-4 hover:underline"
         onClick={handleForgotPassword}
       >
-        Mot de passe oublié ?
+        Mot de passe oublié?
       </a>
     </div>
   );

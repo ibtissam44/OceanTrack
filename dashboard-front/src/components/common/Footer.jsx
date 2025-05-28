@@ -2,8 +2,8 @@ import React from 'react';
 
 const Footer = () => {
   return (
-    <footer className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white p-4 text-center mt-auto">
-      <p>&copy; 2024 Mon Dashboard. Tous droits réservés.</p>
+    <footer className="bg-white text-gray-500 text-center py-4 mt-auto shadow-inner">
+      <p className="text-sm">&copy; 2024 Explore Dashboard. Tous droits réservés.</p>
     </footer>
   );
 };

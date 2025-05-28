@@ -1,5 +1,15 @@
 /* src/index.css */
+.leaflet-container {
+  z-index: 0 !important;
+}
 
+.leaflet-control {
+  z-index: 0 !important;
+}
+
+.leaflet-popup {
+  z-index: 1000 !important;
+}
 
 @tailwind base;
 @tailwind components;

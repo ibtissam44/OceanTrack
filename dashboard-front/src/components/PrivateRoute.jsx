@@ -1,20 +1,14 @@
 import React from 'react';
 import { Navigate } from 'react-router-dom';
 
+const PrivateRoute = ({ element, layout: Layout }) => {
+  const isAuthenticated = localStorage.getItem('isLoggedIn') === 'true';
 
-const PrivateRoute = ({ layout: Layout, element, ...rest }) => {
+  if (!isAuthenticated) {
+    return <Navigate to="/login" replace />;
+  }
 
-  const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
-  const authToken = localStorage.getItem('auth_token');
-
-
-  return isLoggedIn && authToken ? (
-    <Layout>
-      {element}
-    </Layout>
-  ) : (
-    <Navigate to="/" replace /> 
-  );
+  return Layout ? <Layout>{element}</Layout> : element;
 };
 
 export default PrivateRoute;

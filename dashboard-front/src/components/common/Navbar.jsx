@@ -1,42 +1,58 @@
-import React, { useState } from 'react';
-import { FaSearch, FaEnvelope, FaBell } from 'react-icons/fa'; 
+import React, { useState, useEffect } from 'react';
+import { FaMoon, FaSun, FaBars } from 'react-icons/fa';
+import { Tooltip } from 'react-tooltip';
+import { useTheme } from './ThemeContext';
 
 const Navbar = ({ toggleSidebar }) => {
-  const [searchQuery, setSearchQuery] = useState('');
+  const { theme, toggleTheme } = useTheme();
+  const [isMobile, setIsMobile] = useState(false);
 
-  const handleSearchChange = (e) => {
-    setSearchQuery(e.target.value);
-  };
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768); 
+    };
+
+    handleResize(); 
+    window.addEventListener('resize', handleResize); 
+
+    return () => window.removeEventListener('resize', handleResize); 
+  }, []);
 
   return (
-    <nav className="bg-gradient-to-r from-indigo-600 to-purple-600 p-4 shadow-md flex justify-between items-center w-full">
-      
-      <button onClick={toggleSidebar} className="md:hidden text-white">
-        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
-          <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-        </svg>
-      </button>
-
-      <div className="relative flex items-center w-full max-w-md mx-4 md:mx-8">
-    
-
-      <input
-        type="text"
-        value={searchQuery}
-        onChange={handleSearchChange}
-        placeholder="Rechercher..."
-        className="w-full py-2 px-4 pr-10 bg-gray-800 text-white rounded-full border border-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:border-indigo-500 transition-all"
-      />
-
-
-
-        <FaSearch className="absolute right-3 h-5 w-5 text-white" />
+    <nav className="bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 p-4 flex justify-between items-center w-full transition-colors duration-300">
+      <div className="flex items-center">
+        
+        {isMobile && (
+          <button
+            onClick={toggleSidebar}
+            className="text-gray-600 dark:text-gray-300 focus:outline-none"
+            data-tooltip-id="menu-tooltip"
+            data-tooltip-content="Menu"
+          >
+            <FaBars className="h-5 w-5" />
+          </button>
+        )}
       </div>
 
-      <div className="flex items-center space-x-4 ml-4 md:ml-8">
-        <FaEnvelope className="h-5 w-5 text-white cursor-pointer hover:text-blue-500 transition-colors" />
-        <FaBell className="h-5 w-5 text-white cursor-pointer hover:text-blue-500 transition-colors" />
+      <div className="flex items-center space-x-4">
+       
+        <button
+          onClick={toggleTheme}
+          className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-300 focus:outline-none"
+          data-tooltip-id="theme-tooltip"
+          data-tooltip-content={theme === 'dark' ? "Mode clair" : "Mode sombre"}
+        >
+          {theme === 'dark' ? (
+            <FaSun className="text-gray-600 dark:text-yellow-300 h-5 w-5" />
+          ) : (
+            <FaMoon className="text-gray-600 dark:text-gray-300 h-5 w-5" />
+          )}
+        </button>
       </div>
+
+      <Tooltip id="menu-tooltip" className="!bg-gray-700 !text-white" />
+      <Tooltip id="theme-tooltip" className="!bg-gray-700 !text-white" />
     </nav>
   );
 };

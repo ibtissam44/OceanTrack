@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { FaUserAlt, FaEnvelope, FaEdit, FaKey, FaSpinner } from 'react-icons/fa';
+import { FaUserAlt, FaEdit, FaKey, FaSpinner } from 'react-icons/fa';
 import { fetchUserData } from '../api/auth';
 import EditInfoModal from '../components/profile/EditInfoModal';
 import ChangePasswordModal from '../components/profile/ChangePasswordModal';
@@ -33,44 +33,45 @@ const Profile = () => {
 
   if (loading) {
     return (
-      <div className="flex justify-center items-center min-h-screen">
-        <FaSpinner className="text-blue-500 animate-spin text-4xl" />
+      <div className="flex flex-col justify-center items-center min-h-screen text-gray-500">
+        <FaSpinner className="text-sky-400 animate-spin text-4xl mb-4" />
+        <p>Chargement des informations...</p>
       </div>
     );
   }
 
   return (
-    <div className="bg-gradient-to-b from-gray-50 to-gray-100 min-h-screen py-12 px-6">
+    <div className="bg-gradient-to-b from-sky-100 to-sky-200 min-h-screen py-12 px-6">
       <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-xl overflow-hidden">
- 
-        <div className="bg-gradient-to-r from-indigo-500 to-purple-500 text-white py-8 px-6 text-center">
-          <h1 className="text-3xl font-bold">Bienvenue, {userData.name}</h1>
-          <p className="text-sm mt-2">{userData.email}</p>
+        {/* Header Section */}
+        <div className="bg-gradient-to-r from-sky-400 to-cyan-400 text-white py-8 px-6 text-center">
+          <h1 className="text-3xl font-bold">Bienvenue, {userData?.name || 'Utilisateur'}</h1>
+          <p className="text-sm mt-2 opacity-90">{userData?.email}</p>
         </div>
 
-       
+        {/* Content Section */}
         <div className="p-8 grid grid-cols-1 md:grid-cols-2 gap-6">
-         
+          {/* Profile Picture and Info */}
           <div className="flex flex-col items-center">
-            <div className="w-32 h-32 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full flex items-center justify-center shadow-lg mb-6">
+            <div className="w-32 h-32 bg-gradient-to-r from-sky-400 to-cyan-400 rounded-full flex items-center justify-center shadow-lg mb-6">
               <FaUserAlt className="text-5xl text-white" />
             </div>
             <h2 className="text-xl font-semibold text-gray-800">{userData.name}</h2>
-            <p className="text-gray-500">{userData.email}</p>
+            <p className="text-gray-600">{userData.email}</p>
           </div>
 
-       
+          {/* Action Buttons */}
           <div className="flex flex-col space-y-4 justify-center">
             <button
               onClick={() => setEditModalOpen(true)}
-              className="flex items-center justify-center w-full bg-indigo-500 text-white py-3 px-4 rounded-lg hover:bg-indigo-600 transition duration-200"
+              className="flex items-center justify-center w-full bg-sky-400 text-white py-3 px-4 rounded-lg hover:bg-sky-500 transition duration-200 shadow-md hover:shadow-lg"
             >
               <FaEdit className="mr-2" />
               Modifier les informations
             </button>
             <button
               onClick={() => setPasswordModalOpen(true)}
-              className="flex items-center justify-center w-full bg-red-500 text-white py-3 px-4 rounded-lg hover:bg-red-600 transition duration-200"
+              className="flex items-center justify-center w-full bg-red-400 text-white py-3 px-4 rounded-lg hover:bg-red-500 transition duration-200 shadow-md hover:shadow-lg"
             >
               <FaKey className="mr-2" />
               Changer le mot de passe
@@ -86,7 +87,7 @@ const Profile = () => {
           onClose={() => setEditModalOpen(false)}
           onSave={async (updatedData) => {
             setUserData(updatedData);
-            await loadUserData();  
+            await loadUserData();
             setEditModalOpen(false);
           }}
         />
@@ -97,6 +98,5 @@ const Profile = () => {
     </div>
   );
 };
-
 
 export default Profile;
